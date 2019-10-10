@@ -12,9 +12,8 @@
   <title>Styled Components Example</title>
 </head>
 <body>
-
   <div class="container" id="app"></div>
-  
+
   <script src="app.js"></script>
   <script>
     const styled = createStyledInstance();
@@ -27,9 +26,11 @@
       align-items: center;
       flex-direction: column;
       background-color: tomato;
+      -webkit-filter: blur(10px);
+      transition: all 300ms ease-in;
 
       &:hover {
-        background-color: cyan;
+        -webkit-filter: blur(0px);
       }
     `;
 
@@ -49,8 +50,9 @@
       buildElement(appContainer, {}, [
         buildElement(title, {}, 'TDC Recife'),
         buildElement(subTitle, {}, 'Trilha Web Front-end'),
-      ])
+      ]),
     ]);
+
   </script>
 </body>
 </html>
